@@ -6,7 +6,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class ProductController {
+public class ShopController {
 
     @GetMapping("/products")
     public List<String> getAllProducts() {
