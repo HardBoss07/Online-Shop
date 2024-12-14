@@ -19,12 +19,14 @@ public class Product {
     private Category category;
     private Integer price;
     private Integer stock;
+    private String imageURL;
 
-    public Product(String name, Category category, Integer price, Integer stock) {
+    public Product(String name, Category category, Integer price, Integer stock, String imageURL) {
         this.name = name;
         this.category = category;
         this.price = price;
         this.stock = stock;
+        this.imageURL = imageURL;
     }
 
     public Product() {
@@ -32,6 +34,14 @@ public class Product {
     }
 
     // Getters and setters
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
 
     public Long getId() {
         return id;
