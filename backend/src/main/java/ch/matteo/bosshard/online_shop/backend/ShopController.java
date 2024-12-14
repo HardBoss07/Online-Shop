@@ -8,9 +8,12 @@ import java.util.List;
 @RequestMapping("/api")
 public class ShopController {
 
-    @GetMapping("/products")
-    public List<String> getAllProducts() {
+    @Autowired
+    private ProductService productService;
 
-        return List.of("Product 1", "Product 2", "Product 3", "Product 4", "Product 5");
+    @GetMapping("/products")
+    public List<Product> getAllProducts() {
+        System.out.println("accessed /products");
+        return productService.getAllProducts();
     }
 }
