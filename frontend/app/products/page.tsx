@@ -5,6 +5,7 @@ import axios from "axios";
 
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductsPage() {
     const [products, setProducts] = useState([]);
@@ -51,7 +52,26 @@ export default function ProductsPage() {
                 <title>Online Shop | Products</title>
                 <meta name="description" content="Explore our wide range of products!" />
             </Head>
-            <main className="p-6">
+            <main>
+                <header>
+                    <nav className="nav-bar">
+                        <Link href="/" className="nav-button">
+                            <img src="/static/Icons/icon-home.svg" alt="Home"/>
+                        </Link>
+                        <Link href="/products" className="nav-button">
+                            <img src="/static/Icons/icon-products.svg" alt="Products"/>
+                        </Link>
+                        <Link href="/search" className="nav-button">
+                            <img src="/static/Icons/icon-search.svg" alt="Search"/>
+                        </Link>
+                        <Link href="/cart" className="nav-button">
+                            <img src="/static/Icons/icon-cart.svg" alt="Cart"/>
+                        </Link>
+                        <Link href="/login" className="nav-button">
+                            <img src="/static/Icons/icon-person.svg" alt="Account"/>
+                        </Link>
+                    </nav>
+                </header>
                 <h1 className="text-3xl font-bold mb-6">All our Products:</h1>
                 {error ? (
                     <p className="text-red-500">{error}</p>

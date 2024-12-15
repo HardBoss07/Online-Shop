@@ -3,12 +3,12 @@
 import Link from "next/link";
 import Head from "next/head";
 
-export default function Page() {
+export default function SearchPage() {
     return (
         <>
             <Head>
-                <title>Online Shop | Home</title>
-                <meta name="description" content="Welcome to My Online Shop!"/>
+                <title>Online Shop | Cart</title>
+                <meta name="description" content="Your Shopping Cart" />
             </Head>
             <main>
                 <header>
@@ -30,8 +30,10 @@ export default function Page() {
                         </Link>
                     </nav>
                 </header>
-                <h1 className="product-title">Welcome to My Online Shop!</h1>
-                <Link href="/products">Click me to browse all products</Link>
+                <h1 className="cart-titel">Your Shopping Cart:</h1>
+                <p>PLACEHOLDER_ITEM1</p>
+                <p>PLACEHOLDER_ITEM2</p>
+                <p>PLACEHOLDER_ITEM3</p>
             </main>
         </>
     );
