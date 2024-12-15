@@ -1,9 +1,10 @@
-"use client"; // Add this at the top
+"use client";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 import Head from "next/head";
+import Image from "next/image";
 
 export default function ProductsPage() {
     const [products, setProducts] = useState([]);
@@ -12,7 +13,7 @@ export default function ProductsPage() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get("http://localhost:8080/api/products");
+                const response = await axios.get("api/products");
                 setProducts(response.data);
                 setError(null);
             } catch (err) {
@@ -24,25 +25,40 @@ export default function ProductsPage() {
         fetchProducts();
     }, []);
 
+    const createProductCard = (product: any) => {
+        return (
+            <div key={product.id} className="product-card">
+                <h2 className="product-title">{product.name}</h2>
+                <div className="image-container">
+                    <Image
+                        src={product.imageURL}
+                        alt={`Image of ${product.name}`}
+                        width={200}
+                        height={200}
+                        style={{ objectFit: "cover", objectPosition: "center" }}
+                    />
+                </div>
+                <p className="product-price">Price: ${product.price}</p>
+                <p className="product-category">Category: {product.category}</p>
+                <p className="product-stock">Stock: {product.stock}</p>
+            </div>
+        );
+    };
+
     return (
         <>
             <Head>
                 <title>Online Shop | Products</title>
-                <meta name="description" content="Explore our wide range of products!"/>
+                <meta name="description" content="Explore our wide range of products!" />
             </Head>
-            <main style={{padding: "20px"}}>
-                <h1>Product List</h1>
+            <main className="p-6">
+                <h1 className="text-3xl font-bold mb-6">All our Products:</h1>
                 {error ? (
-                    <p style={{color: "red"}}>{error}</p>
+                    <p className="text-red-500">{error}</p>
                 ) : (
-                    <ul>
-                        {products.map((product: any, index: number) => (
-                            <li key={index}>
-                                <strong>{product.name}</strong> - {product.category} -
-                                ${product.price} (Stock: {product.stock})
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="product-list">
+                        {products.map((product: any) => createProductCard(product))}
+                    </div>
                 )}
             </main>
         </>

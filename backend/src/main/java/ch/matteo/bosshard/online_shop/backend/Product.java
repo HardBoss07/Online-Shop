@@ -1,11 +1,6 @@
 package ch.matteo.bosshard.online_shop.backend;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import jakarta.persistence.*;
 
 @Entity
 public class Product {
@@ -19,6 +14,8 @@ public class Product {
     private Category category;
     private Integer price;
     private Integer stock;
+
+    @Column(name = "image_url")
     private String imageURL;
 
     public Product(String name, Category category, Integer price, Integer stock, String imageURL) {
