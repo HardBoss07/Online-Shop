@@ -6,6 +6,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* globals.css */
+.icon-active {
+    @apply fill-current; /* Ensure the color applies to the SVG fill */
+    color: #ffffff; /* Hex for white */
+}
+
+.icon-inactive {
+    @apply fill-current;
+    color: #000000; /* Hex for black */
+}
+
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
