@@ -7,22 +7,21 @@ DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
                            `id` bigint NOT NULL AUTO_INCREMENT,
                            `name` varchar(255) NOT NULL,
-                           `category` enum('Electronics','Clothing','Groceries','Books','Furniture') NOT NULL,
+                           `category` enum('Electronics', 'Smartphone', 'Audio', 'Laptop', 'Peripherie') NOT NULL,
                            `price` int DEFAULT NULL,
                            `stock` int NOT NULL,
-                           `image_url` varchar(255) DEFAULT NULL,
+                           `description` varchar(255) NOT NULL,
+                           `image_url` varchar(255) NOT NULL,
                            PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Dumping data for table `product`
 INSERT INTO `product` VALUES
-                          (1, 'Smartphone', 'Electronics', 700, 50, '/static/ProductImages/smartphone.png'),
-                          (2, 'Laptop', 'Electronics', 1200, 30, '/static/ProductImages/laptop.png'),
-                          (3, 'T-shirt', 'Clothing', 20, 150, '/static/ProductImages/tshirt.png'),
-                          (4, 'Jeans', 'Clothing', 40, 100, '/static/ProductImages/jeans.png'),
-                          (5, 'Apple', 'Groceries', 2, 500, '/static/ProductImages/apple.png'),
-                          (6, 'Dining Table', 'Furniture', 300, 20, '/static/ProductImages/diningtable.png'),
-                          (7, 'Bookshelf', 'Furniture', 150, 10, '/static/ProductImages/bookshelf.png'),
-                          (8, 'Novel', 'Books', 15, 75, '/static/ProductImages/novel.png'),
-                          (9, 'Headphones', 'Electronics', 100, 60, '/static/ProductImages/headphones.png'),
-                          (10, 'Coffee Table', 'Furniture', 250, 15, '/static/ProductImages/coffeetable.png');
+                          (1, 'Samsung Galaxy S24+', 'Smartphone', 830, 200, '256 GB, Onyx Black, 6.70", SIM + eSIM, 50 Mpx, 5G', '/static/ProductImages/SamsungGalaxyS24+/'),
+                          (2, 'Apple iPhone 16 Pro Max', 'Smartphone', 1170, 300, '256 GB, Black Titanium, 6.90", SIM + eSIM, 48 Mpx, 5G', '/static/ProductImages/AppleiPhone16ProMax/'),
+                          (3, 'Bose QuietComfort Ultra', 'Audio', 300, 100, 'ANC, 18 h, Kabellos, Kabelgebunden', '/static/ProductImages/BoseQuietComfortUltra/'),
+                          (4, 'Apple HomePod 2nd Gen.', 'Audio', 290, 50, 'Apple Siri Integration', '/static/ProductImages/AppleHomePod2ndGen/'),
+                          (5, 'Apple MacBook Pro 14 - 2024', 'Laptop', 2280, 150, '14.20", M4 Pro, 24 GB, 1000 GB, CH', '/static/ProductImages/AppleMacBookPro14-2024/'),
+                          (6, 'Lenovo ThinkPad E16 Gen 2', 'Laptop', 1280, 250, '16", Intel Core Ultra 7 155H, 32 GB, 1000 GB, CH', '/static/ProductImages/LenovoThinkPadE16Gen2/'),
+                          (7, 'Logitech Pro X 60', 'Peripherie', 160, 200, 'CH, Kabellos', '/static/ProductImages/LogitechProX60/'),
+                          (8, 'Logitech G Pro X Superlight 2', 'Peripherie', 130, 200, 'Kabellos, Kabelgebunden', '/static/ProductImages/LogitechGProXSuperlight2/');

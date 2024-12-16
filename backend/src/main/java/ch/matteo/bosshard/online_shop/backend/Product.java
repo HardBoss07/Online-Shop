@@ -82,5 +82,5 @@ public class Product {
 }
 
 enum Category {
-    Electronics, Clothing, Groceries, Books, Furniture;
+    Smartphone, Audio, Laptop, Peripherie, Furniture;
 }

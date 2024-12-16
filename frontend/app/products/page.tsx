@@ -14,7 +14,7 @@ export default function ProductsPage() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get("api/products");
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products`);
                 setProducts(response.data);
                 setError(null);
             } catch (err) {
@@ -27,12 +27,16 @@ export default function ProductsPage() {
     }, []);
 
     const createProductCard = (product: any) => {
+        // Use the first image from the image_url path (assuming it's the path without a specific number)
+        const imageUrl = `${product.imageURL}1.avif`;
+
         return (
             <div key={product.id} className="product-card">
                 <h2 className="product-title">{product.name}</h2>
                 <div className="image-container">
+                    {/* Display the first image for each product */}
                     <Image
-                        src={product.imageURL}
+                        src={imageUrl}
                         alt={`Image of ${product.name}`}
                         width={200}
                         height={200}
@@ -67,7 +71,7 @@ export default function ProductsPage() {
                         <Link href="/cart" className="nav-button">
                             <img src="/static/Icons/icon-cart.svg" alt="Cart"/>
                         </Link>
-                        <Link href="/login" className="nav-button">
+                        <Link href="/account" className="nav-button">
                             <img src="/static/Icons/icon-person.svg" alt="Account"/>
                         </Link>
                     </nav>

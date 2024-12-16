@@ -57,6 +57,51 @@ body {
     margin: 8px 0;
 }
 
+.image-viewer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 220px; /* Container width */
+    height: 220px; /* Container height */
+}
+
+.image-viewer img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-viewer .left-button,
+.image-viewer .right-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.image-viewer .left-button {
+    left: 10px;
+}
+
+.image-viewer .right-button {
+    right: 10px;
+}
+
+.image-viewer .left-button:hover,
+.image-viewer .right-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
 .nav-bar {
     display: flex;
     justify-content: space-around;
