@@ -4,19 +4,19 @@ import Head from "next/head";
 import Link from "next/link";
 import NavBar from "@/app/navbar";
 
-export default function ProductsPage() {
+export default function TEMPLATE_PAGE() {
     return (
         <>
             <Head>
-                <title>Online Shop | Products</title>
-                <meta name="description" content="Explore our wide range of products!" />
+                <title>Online Shop | TEMPLATE</title>
+                <meta name="description" content="TEMPLATE DESCRIPTION" />
             </Head>
             <main>
                 <header>
-                    <NavBar activeIcon={2} />
+                    <NavBar activeIcon={0} />
                 </header>
                 <section className="page-content">
-                    <h1 className="text-3xl font-bold mb-6">Our Categories:</h1>
+
                 </section>
             </main>
         </>

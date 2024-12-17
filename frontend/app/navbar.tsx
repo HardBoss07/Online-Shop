@@ -67,7 +67,16 @@ class NavBar extends Component<{ activeIcon: number }> {
                     </svg>
                 </Link>
 
-                {/* Search */}
+                {/* Search Bar */}
+                <div className="flex-grow">
+                    <input
+                        type="text"
+                        placeholder="Search for products..."
+                        className="search-input"
+                    />
+                </div>
+
+                {/* Search Icon */}
                 <Link href="/search" className="nav-button">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

@@ -15,8 +15,10 @@ export default function Page() {
                 <header>
                     <NavBar activeIcon={1} />
                 </header>
-                <h1 className="product-title">Welcome to My Online Shop!</h1>
-                <Link href="/products">Click me to browse all products</Link>
+                <section className="page-content">
+                    <h1 className="product-title">Welcome to My Online Shop!</h1>
+                    <Link href="/products">Click me to browse all products</Link>
+                </section>
             </main>
         </>
     );

@@ -15,10 +15,12 @@ export default function SearchPage() {
                 <header>
                     <NavBar activeIcon={4} />
                 </header>
-                <h1 className="cart-titel">Your Shopping Cart:</h1>
-                <p>PLACEHOLDER_ITEM1</p>
-                <p>PLACEHOLDER_ITEM2</p>
-                <p>PLACEHOLDER_ITEM3</p>
+                <section className="page-content">
+                    <h1 className="cart-titel">Your Shopping Cart:</h1>
+                    <p>PLACEHOLDER_ITEM1</p>
+                    <p>PLACEHOLDER_ITEM2</p>
+                    <p>PLACEHOLDER_ITEM3</p>
+                </section>
             </main>
         </>
     );

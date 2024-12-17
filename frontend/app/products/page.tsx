@@ -61,15 +61,17 @@ export default function ProductsPage() {
                 <header>
                     <NavBar activeIcon={2} />
                 </header>
-                <h1 className="text-3xl font-bold mb-6">All our Products:</h1>
-                <Link href="/products/categories">Shop by category</Link>
-                {error ? (
-                    <p className="text-red-500">{error}</p>
-                ) : (
-                    <div className="product-list">
-                        {products.map((product: any) => createProductCard(product))}
-                    </div>
-                )}
+                <section className="page-content">
+                    <h1 className="text-3xl font-bold mb-6">All our Products:</h1>
+                    <Link href="/products/categories">Shop by category</Link>
+                    {error ? (
+                        <p className="text-red-500">{error}</p>
+                    ) : (
+                        <div className="product-list">
+                            {products.map((product: any) => createProductCard(product))}
+                        </div>
+                    )}
+                </section>
             </main>
         </>
     );

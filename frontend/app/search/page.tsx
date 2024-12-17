@@ -15,8 +15,10 @@ export default function SearchPage() {
                 <header>
                     <NavBar activeIcon={3} />
                 </header>
-                <h1 className="product-title">Welcome to My Online Shop!</h1>
-                <input className="search-bar" placeholder="Search for products" />
+                <section className="page-content">
+                    <h1 className="product-title">Welcome to My Online Shop!</h1>
+                    <input className="search-bar" placeholder="Search for products"/>
+                </section>
             </main>
         </>
     );
