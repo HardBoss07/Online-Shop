@@ -3,7 +3,7 @@ package ch.matteo.bosshard.online_shop.backend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.Optional;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -19,8 +19,14 @@ public class ShopController {
     }
 
     @GetMapping("/products/{id}")
-    public Optional<Product> getProductById(@PathVariable long id) {
+    public Product getProductById(@PathVariable long id) {
         System.out.println("accessed /products/" + id);
         return productService.getProductById(id);
+    }
+
+    @GetMapping("/products/categories")
+    public List<Map<String, Object>> getAllCategories() {
+        System.out.println("accessed /products/categories");
+        return productService.getAllProductsCategorized();
     }
 }

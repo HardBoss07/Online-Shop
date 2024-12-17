@@ -163,6 +163,43 @@ image-viewer .right-button {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+/* Category Div Container */
+.category-div {
+    @apply border border-gray-200 rounded-lg shadow-md p-4 mb-8 bg-white;
+}
+
+/* Category Header */
+.category-header {
+    @apply flex justify-between items-center mb-4 border-b border-gray-300 pb-2;
+}
+
+.category-title {
+    @apply text-2xl font-semibold text-gray-800;
+}
+
+.products-count {
+    @apply text-sm font-medium text-gray-600;
+}
+
+/* Products Grid */
+.products-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+}
+
+/* Product Card */
+.product-card {
+    @apply border border-gray-300 rounded-md p-2 flex flex-col items-center;
+}
+
+.product-image {
+    @apply mb-2;
+}
+
+.product-name {
+    @apply text-sm font-medium text-gray-700 text-center;
+}
+
+
 /* Responsive Design */
 @media (min-width: 40rem) {
     .product-list {

@@ -81,6 +81,3 @@ public class Product {
     }
 }
 
-enum Category {
-    Smartphone, Audio, Laptop, Peripherie, Furniture;
-}
