@@ -13,7 +13,7 @@ export default function ProductsPage() {
     const [categories, setCategories] = useState([]);
     const [error, setError] = useState<string | null>(null);
 
-    const categoryNames = ["Smartphone", "Audio", "Laptop", "Peripherie"]
+    const categoryNames = ["Smartphone", "Audio", "Laptop", "Peripherals"]
 
     useEffect(() => {
         const fetchProducts = async () => {
