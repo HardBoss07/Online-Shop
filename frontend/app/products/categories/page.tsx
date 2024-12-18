@@ -1,8 +1,10 @@
 "use client";
 
 import Head from "next/head";
-import Link from "next/link";
+import React from "react";
 import NavBar from "@/app/navbar";
+import ProductCardGenerator from "@/app/ProductCardGenerator";
+
 import {useEffect, useState} from "react";
 import axios from "axios";
 import Image from "next/image";
@@ -75,7 +77,9 @@ export default function ProductsPage() {
 
                 {/* Products Grid */}
                 <div className="products-grid">
-                    {displayProducts.map((product: any) => createProductCard(product))}
+                    {displayProducts.map((product: any) => (
+                        <ProductCardGenerator key={product.id} data={product} detail="Low"/>
+                    ))}
                 </div>
             </div>
         );

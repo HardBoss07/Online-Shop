@@ -110,7 +110,7 @@ header {
 
 /* Category Div Container */
 .category-div {
-    @apply border border-secondary rounded-lg shadow-md p-4 mb-8 bg-white;
+    @apply border rounded-lg shadow-md p-4 mb-8 bg-white;
 }
 
 /* Category Header */

@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react";
 import axios from "axios";
+import React from "react";
 
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import NavBar from "@/app/navbar";
+import ProductCardGenerator from "@/app/ProductCardGenerator";
 
 export default function ProductsPage() {
     const [products, setProducts] = useState([]);
@@ -27,30 +29,6 @@ export default function ProductsPage() {
         fetchProducts();
     }, []);
 
-    const createProductCard = (product: any) => {
-        // Use the first image from the image_url path (assuming it's the path without a specific number)
-        const imageUrl = `${product.imageURL}1.avif`;
-
-        return (
-            <div key={product.id} className="product-card">
-                <h2 className="product-title">{product.name}</h2>
-                <div className="image-container">
-                    {/* Display the first image for each product */}
-                    <Image
-                        src={imageUrl}
-                        alt={`Image of ${product.name}`}
-                        width={200}
-                        height={200}
-                        style={{ objectFit: "cover", objectPosition: "center" }}
-                    />
-                </div>
-                <p className="product-price">Price: ${product.price}</p>
-                <p className="product-category">Category: {product.category}</p>
-                <p className="product-stock">Stock: {product.stock}</p>
-            </div>
-        );
-    };
-
     return (
         <>
             <Head>
@@ -68,7 +46,9 @@ export default function ProductsPage() {
                         <p className="text-red-500">{error}</p>
                     ) : (
                         <div className="product-list">
-                            {products.map((product: any) => createProductCard(product))}
+                            {products.map((product: any) => (
+                                <ProductCardGenerator key={product.id} data={product} detail="Medium"/>
+                            ))}
                         </div>
                     )}
                 </section>
