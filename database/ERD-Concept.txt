@@ -1,0 +1,140 @@
+Entity Relationship Diagram for online_shop
+
+
+1. PRODUCT:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 1.)
+    .name: VARCHAR(255), NOT NULL
+    .category_id: INT, NOT NULL (FK to 2.)
+    .price: DECIMAL(10,2), NOT NULL
+    .stock: INT, NOT NULL
+    .image_url: VARCHAR(255), NULL
+
+2. CATEGORY:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 2.)
+    .name: VARCHAR(255), NOT NULL
+
+3. USER:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 3.)
+    .username: VARCHAR(255), NOT NULL, UNIQUE
+    .password: VARCHAR(255), NOT NULL
+    .surname: VARCHAR(255), NOT NULL
+    .firstname: VARCHAR(255), NOT NULL
+    .address: VARCHAR(255), NOT NULL
+    .role_id: INT, NOT NULL (FK to 4.)
+
+4. ROLE:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 4.)
+    .name: VARCHAR(255), NOT NULL
+
+5. ORDER:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 5.)
+    .user_id: INT, NOT NULL (FK to 3.)
+    .date: DATETIME, NOT NULL
+    .address_id: INT, NOT NULL (FK to 6.)
+    .shipping_method_id: INT, NOT NULL (FK to 9.)
+    .order_status_id: INT, NOT NULL (FK to 10.)
+    .total: DECIMAL(10,2), NOT NULL
+
+6. ADDRESS:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 6.)
+    .user_id: INT, NOT NULL (FK to 3.)
+    .street: VARCHAR(255), NOT NULL
+    .city: VARCHAR(255), NOT NULL
+    .state: VARCHAR(255), NOT NULL
+    .postal_code: VARCHAR(20), NOT NULL
+    .country: VARCHAR(255), NOT NULL
+
+7. ORDER_ITEM:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 7.)
+    .order_id: INT, NOT NULL (FK to 5.)
+    .product_id: INT, NOT NULL (FK to 1.)
+    .quantity: INT, NOT NULL
+    .price_per_unit: DECIMAL(10,2), NOT NULL
+    .item_total: DECIMAL(10,2), NOT NULL
+
+8. FEE:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 8.)
+    .order_id: INT, NOT NULL (FK to 5.)
+    .fee_type_id: INT, NOT NULL (FK to 11.)
+    .feeprice: DECIMAL(10,2), NOT NULL
+
+9. SHIPPING_METHOD:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 9.)
+    .name: VARCHAR(255), NOT NULL
+    .description: TEXT, NULL
+    .price: DECIMAL(10,2), NOT NULL
+
+10. ORDER_STATUS:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 10.)
+    .status: VARCHAR(255), NOT NULL
+
+11. FEE_TYPE:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 11.)
+    .name: VARCHAR(255), NOT NULL
+
+12. STOCK_TRANSACTION:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 12.)
+    .product_id: INT, NOT NULL (FK to 1.)
+    .transaction_type_id: INT, NOT NULL (FK to 13.)
+    .quantity: INT, NOT NULL
+    .date: DATETIME, NOT NULL
+    .reference_order_id: INT, NULL (FK to 5.)
+
+13. TRANSACTION_TYPE:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 13.)
+    .type: VARCHAR(50), NOT NULL
+
+14. DISCOUNT:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 14.)
+    .code: VARCHAR(50), NOT NULL, UNIQUE
+    .type_id: INT, NOT NULL (FK to 15.)
+    .value: DECIMAL(10,2), NOT NULL
+    .start_date: DATETIME, NOT NULL
+    .end_date: DATETIME, NOT NULL
+    .status_id: INT, NOT NULL (FK to 16.)
+
+15. DISCOUNT_TYPE:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 15.)
+    .type: VARCHAR(50), NOT NULL
+
+16. PAYMENT_STATUS:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 16.)
+    .status: VARCHAR(50), NOT NULL
+
+17. ORDER_DISCOUNT:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 17.)
+    .order_id: INT, NOT NULL (FK to 5.)
+    .discount_id: INT, NOT NULL (FK to 14.)
+
+18. PAYMENT:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 18.)
+    .order_id: INT, NOT NULL (FK to 5.)
+    .payment_method_id: INT, NOT NULL (FK to 19.)
+    .payment_status_id: INT, NOT NULL (FK to 16.)
+    .amount_paid: DECIMAL(10,2), NOT NULL
+    .transaction_date: DATETIME, NOT NULL
+
+19. PAYMENT_METHOD:
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 19.)
+    .method: VARCHAR(255), NOT NULL
+
+Relations:
+
+PRODUCT.category_id 			-> CATEGORY.id 			| m ----- 1  
+USER.role_id 				-> ROLE.id 			| m ----- 1  
+ORDER.user_id 				-> USER.id 			| m ----- 1  
+ORDER.address_id 			-> ADDRESS.id 			| m ----- 1  
+ORDER.shipping_method_id 		-> SHIPPING_METHOD.id 		| m ----- 1  
+ORDER.order_status_id 			-> ORDER_STATUS.id 		| m ----- 1  
+ORDER_ITEM.order_id 			-> ORDER.id 			| m ----- 1  
+ORDER_ITEM.product_id 			-> PRODUCT.id 			| m ----- 1  
+FEE.order_id 				-> ORDER.id 			| m ----- 1  
+FEE.fee_type_id 			-> FEE_TYPE.id 			| m ----- 1  
+STOCK_TRANSACTION.product_id 		-> PRODUCT.id 			| m ----- 1  
+STOCK_TRANSACTION.transaction_type_id 	-> TRANSACTION_TYPE.id 		| m ----- 1  
+ORDER_DISCOUNT.order_id 		-> ORDER.id 			| m ----- 1  
+ORDER_DISCOUNT.discount_id 		-> DISCOUNT.id 			| m ----- 1  
+DISCOUNT.type_id 			-> DISCOUNT_TYPE.id 		| m ----- 1  
+PAYMENT.order_id 			-> ORDER.id 			| m ----- 1  
+PAYMENT.payment_method_id 		-> PAYMENT_METHOD.id 		| m ----- 1  
+PAYMENT.payment_status_id 		-> PAYMENT_STATUS.id 		| m ----- 1
