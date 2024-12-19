@@ -120,21 +120,21 @@ Entity Relationship Diagram for online_shop
 
 Relations:
 
-PRODUCT.category_id 			-> CATEGORY.id 			| m ----- 1  
-USER.role_id 				-> ROLE.id 			| m ----- 1  
-ORDER.user_id 				-> USER.id 			| m ----- 1  
-ORDER.address_id 			-> ADDRESS.id 			| m ----- 1  
-ORDER.shipping_method_id 		-> SHIPPING_METHOD.id 		| m ----- 1  
-ORDER.order_status_id 			-> ORDER_STATUS.id 		| m ----- 1  
-ORDER_ITEM.order_id 			-> ORDER.id 			| m ----- 1  
-ORDER_ITEM.product_id 			-> PRODUCT.id 			| m ----- 1  
-FEE.order_id 				-> ORDER.id 			| m ----- 1  
-FEE.fee_type_id 			-> FEE_TYPE.id 			| m ----- 1  
-STOCK_TRANSACTION.product_id 		-> PRODUCT.id 			| m ----- 1  
-STOCK_TRANSACTION.transaction_type_id 	-> TRANSACTION_TYPE.id 		| m ----- 1  
-ORDER_DISCOUNT.order_id 		-> ORDER.id 			| m ----- 1  
-ORDER_DISCOUNT.discount_id 		-> DISCOUNT.id 			| m ----- 1  
-DISCOUNT.type_id 			-> DISCOUNT_TYPE.id 		| m ----- 1  
-PAYMENT.order_id 			-> ORDER.id 			| m ----- 1  
-PAYMENT.payment_method_id 		-> PAYMENT_METHOD.id 		| m ----- 1  
-PAYMENT.payment_status_id 		-> PAYMENT_STATUS.id 		| m ----- 1
+PRODUCT.category_id 			            -> CATEGORY.id 			| m ----- 1
+USER.role_id 				                -> ROLE.id 			    | m ----- 1
+ORDER.user_id 				                -> USER.id 			    | m ----- 1
+ORDER.address_id 			                -> ADDRESS.id 			| m ----- 1
+ORDER.shipping_method_id 		            -> SHIPPING_METHOD.id 	| m ----- 1
+ORDER.order_status_id 			            -> ORDER_STATUS.id 		| m ----- 1
+ORDER_ITEM.order_id 			            -> ORDER.id 			| m ----- 1
+ORDER_ITEM.product_id 			            -> PRODUCT.id 			| m ----- 1
+FEE.order_id 				                -> ORDER.id 			| m ----- 1
+FEE.fee_type_id 			                -> FEE_TYPE.id 			| m ----- 1
+STOCK_TRANSACTION.product_id 		        -> PRODUCT.id 			| m ----- 1
+STOCK_TRANSACTION.transaction_type_id       -> TRANSACTION_TYPE.id 	| m ----- 1
+ORDER_DISCOUNT.order_id 		            -> ORDER.id 			| m ----- 1
+ORDER_DISCOUNT.discount_id 		            -> DISCOUNT.id 			| m ----- 1
+DISCOUNT.type_id 			                -> DISCOUNT_TYPE.id 	| m ----- 1
+PAYMENT.order_id 			                -> ORDER.id 			| m ----- 1
+PAYMENT.payment_method_id 		            -> PAYMENT_METHOD.id 	| m ----- 1
+PAYMENT.payment_status_id 		            -> PAYMENT_STATUS.id 	| m ----- 1

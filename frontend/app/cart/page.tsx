@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Head from "next/head";
 import NavBar from "@/app/navbar";
 

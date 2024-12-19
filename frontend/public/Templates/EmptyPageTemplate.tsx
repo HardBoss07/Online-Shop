@@ -1,7 +1,6 @@
 "use client";
 
 import Head from "next/head";
-import Link from "next/link";
 import NavBar from "@/app/navbar";
 
 export default function TEMPLATE_PAGE() {
