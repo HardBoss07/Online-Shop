@@ -9,13 +9,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#3498db", // color1: primary brand color
-        secondary: "#2ecc71", // color2: secondary brand color
-        highlight: "#f39c12", // color3: primary highlight color
-        highlight2: "#e74c3c", // color4: secondary highlight color
-        navbar: "#34495e", // color5: nav bar color
-        offwhite: "#f5f5f5", // color6: off-white color
-        offblack: "#2c3e50", // color7: off-black color
+        primary: "#aed7e4", // color1: primary brand color
+        secondary: "#6baac6", // color2: secondary brand color
+        highlight: "#498ead", // color3: primary highlight color
+        highlight2: "#134663", // color4: secondary highlight color
+        navbar: "#567387", // color5: nav bar color
+        offwhite: "#edf2f4", // color6: off-white color
+        offblack: "#151719", // color7: off-black color
       },
       fontFamily: {
         roboto: ["'Roboto'", "sans-serif"],
