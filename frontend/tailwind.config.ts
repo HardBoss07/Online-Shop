@@ -9,11 +9,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#aed7e4", // color1: primary brand color
+        primary: "#134663", // color1: primary brand color
         secondary: "#6baac6", // color2: secondary brand color
         highlight: "#498ead", // color3: primary highlight color
         highlight2: "#134663", // color4: secondary highlight color
-        navbar: "#567387", // color5: nav bar color
+        navbar: "#aed7e3", // color5: nav bar color
         offwhite: "#edf2f4", // color6: off-white color
         offblack: "#151719", // color7: off-black color
       },
