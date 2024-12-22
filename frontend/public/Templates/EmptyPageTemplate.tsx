@@ -7,7 +7,7 @@ export default function TEMPLATE_PAGE() {
     return (
         <>
             <Head>
-                <title>Online Shop | TEMPLATE</title>
+                <title>NovaTech | TEMPLATE</title>
                 <meta name="description" content="TEMPLATE DESCRIPTION" />
             </Head>
             <main>

@@ -73,7 +73,7 @@ export default function ProductsPage() {
     return (
         <>
             <Head>
-                <title>Online Shop | Categories</title>
+                <title>NovaTech | Categories</title>
                 <meta name="description" content="All products sorted by their category" />
             </Head>
             <main>

@@ -7,7 +7,7 @@ export default function SearchPage() {
     return (
         <>
             <Head>
-                <title>Online Shop | Account</title>
+                <title>NovaTech | Account</title>
                 <meta name="description" content="Your Account" />
             </Head>
             <main>

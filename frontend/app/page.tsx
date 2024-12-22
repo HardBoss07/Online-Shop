@@ -8,16 +8,16 @@ export default function Page() {
     return (
         <>
             <Head>
-                <title>Online Shop | Home</title>
-                <meta name="description" content="Welcome to My Online Shop!"/>
+                <title>NovaTech</title>
+                <meta name="description" content="Welcome to NovaTech!"/>
             </Head>
             <main>
                 <header>
                     <NavBar activeIcon={1} />
                 </header>
                 <section className="page-content">
-                    <h1 className="product-title">Welcome to My Online Shop!</h1>
-                    <Link href="/products">Click me to browse all products</Link>
+                    <h1 className="product-title">Welcome to NovaTech!</h1>
+                    <Link href="/products">Click me to browse all of NovaTech's products</Link>
                 </section>
             </main>
         </>

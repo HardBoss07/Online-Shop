@@ -10,8 +10,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-    title: "Online Shop",
-    description: "Welcome to My Online Shop",
+    title: "NovaTech",
+    description: "Welcome to NovaTech",
 };
 
 export default function RootLayout({

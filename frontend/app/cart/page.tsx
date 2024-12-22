@@ -7,7 +7,7 @@ export default function SearchPage() {
     return (
         <>
             <Head>
-                <title>Online Shop | Cart</title>
+                <title>NovaTech | Cart</title>
                 <meta name="description" content="Your Shopping Cart" />
             </Head>
             <main>

@@ -31,7 +31,7 @@ export default function ProductsPage() {
     return (
         <>
             <Head>
-                <title>Online Shop | Products</title>
+                <title>NovaTech | Products</title>
                 <meta name="description" content="Explore our wide range of products!" />
             </Head>
             <main>

@@ -36,7 +36,7 @@ export default function CategoryPage() {
     return (
         <>
             <Head>
-                <title>Online Shop | {category}</title>
+                <title>NovaTech | {category}</title>
                 <meta name="description" content={`All products in the ${category} category`} />
             </Head>
             <main>
