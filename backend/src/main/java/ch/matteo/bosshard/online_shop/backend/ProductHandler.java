@@ -18,7 +18,7 @@ public class ProductHandler {
         return productRepository.findAll();
     }
 
-    public Product getProduct(long id) {
+    public Product getProductById(long id) {
         Product product = null;
         return new Product();
     }

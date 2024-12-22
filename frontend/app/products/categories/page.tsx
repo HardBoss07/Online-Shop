@@ -8,6 +8,7 @@ import ProductCardGenerator from "@/app/ProductCardGenerator";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductsPage() {
     const [categories, setCategories] = useState([]);
@@ -41,25 +42,6 @@ export default function ProductsPage() {
         fetchProducts();
     }, []);
 
-    const createProductCard = (product: any) => {
-        const imageUrl = `${product.imageURL}1.avif`;
-
-        return (
-            <div key={product.id} className="product-card">
-                <div className="product-image">
-                    <Image
-                        src={imageUrl}
-                        alt={`Image of ${product.name}`}
-                        width={100}
-                        height={100}
-                        className="rounded"
-                    />
-                </div>
-                <p className="product-name">{product.name}</p>
-            </div>
-        );
-    };
-
     const createCategoryDiv = (category: any) => {
         const categoryName = category.name;
         const products = category.products;
@@ -74,6 +56,8 @@ export default function ProductsPage() {
                     <h2 className="category-title">{categoryName}</h2>
                     <span className="products-count">Products: {productsAmount}</span>
                 </div>
+                <Link href={`/products/categories/${category.name}`}>{category.name}</Link>
+
 
                 {/* Products Grid */}
                 <div className="products-grid">

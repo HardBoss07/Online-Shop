@@ -10,23 +10,29 @@ import java.util.Map;
 public class ShopController {
 
     @Autowired
-    private ProductService productService;
+    private ProductHandler productHandler;
 
     @GetMapping("/products")
     public List<Product> getAllProducts() {
         System.out.println("accessed /products");
-        return productService.getAllProducts();
+        return productHandler.getAllProducts();
     }
 
     @GetMapping("/products/{id}")
     public Product getProductById(@PathVariable long id) {
         System.out.println("accessed /products/" + id);
-        return productService.getProductById(id);
+        return productHandler.getProductById(id);
     }
 
     @GetMapping("/products/categories")
     public List<Map<String, Object>> getAllCategories() {
         System.out.println("accessed /products/categories");
-        return productService.getAllProductsCategorized();
+        return productHandler.getAllProductsSortedByCategory();
+    }
+
+    @GetMapping("/products/category/{category}")
+    public List<Product> getAllCategoriesByCategory(@PathVariable String category) {
+        System.out.println("accessed /products/category" + category);
+        return productHandler.getProductsByCategory(Category.valueOf(category));
     }
 }
