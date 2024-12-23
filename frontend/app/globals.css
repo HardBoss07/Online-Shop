@@ -87,24 +87,24 @@ header {
 
 /* Image Viewer Styles */
 .image-viewer {
-    @apply flex items-center justify-center relative w-full max-w-[13.75rem] h-[13.75rem];
+    @apply relative flex justify-center items-center w-full max-w-[400px] h-[400px];
 }
 
-.image-viewer img {
-    @apply w-48 h-48 object-cover object-center;
+.image-viewer .image {
+    @apply object-contain object-center;
 }
 
 .image-viewer .left-button,
 .image-viewer .right-button {
-    @apply absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white border-none py-2 px-3 text-lg cursor-pointer z-10 rounded-full;
+    @apply absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white py-2 px-3 text-lg cursor-pointer z-10 rounded-full;
 }
 
 .image-viewer .left-button {
-    @apply left-2.5;
+    @apply left-4;
 }
 
 .image-viewer .right-button {
-    @apply right-2.5;
+    @apply right-4;
 }
 
 .image-viewer .left-button:hover,
