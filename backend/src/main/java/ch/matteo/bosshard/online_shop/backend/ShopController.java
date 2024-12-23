@@ -1,6 +1,8 @@
 package ch.matteo.bosshard.online_shop.backend;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
@@ -19,9 +21,14 @@ public class ShopController {
     }
 
     @GetMapping("/products/{id}")
-    public Product getProductById(@PathVariable long id) {
+    public ResponseEntity<?> getProductById(@PathVariable long id) {
         System.out.println("accessed /products/" + id);
-        return productHandler.getProductById(id);
+        Product product = productHandler.getProductById(id);
+        if (product == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Product not found with id: " + id);
+        }
+        return ResponseEntity.ok(product);
     }
 
     @GetMapping("/products/categories")

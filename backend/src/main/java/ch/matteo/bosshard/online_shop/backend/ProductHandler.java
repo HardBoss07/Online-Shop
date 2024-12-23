@@ -19,8 +19,7 @@ public class ProductHandler {
     }
 
     public Product getProductById(long id) {
-        Product product = null;
-        return new Product();
+        return productRepository.findById(id);
     }
 
     public List<Map<String, Object>> getAllProductsSortedByCategory() {

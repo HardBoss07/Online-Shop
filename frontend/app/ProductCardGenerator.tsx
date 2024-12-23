@@ -1,5 +1,6 @@
 import React, {JSX} from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type DetailLevel = "Low" | "Medium" | "High";
 
@@ -59,9 +60,32 @@ const ProductCardGenerator: React.FC<ProductCardGeneratorProps> = ({ data, detai
                 <p className="product-price">Price: ${data.price}</p>
                 <p className="product-category">Category: {data.category}</p>
                 <p className="product-stock">Stock: {data.stock}</p>
+                <Link href={`/products/${data.id}`}>${data.name} Page</Link>
             </div>
         );
     };
+
+    const generateHighDetailed = (): JSX.Element => {
+
+        const imageUrl = `${data.imageURL}1.avif`;
+
+        return (
+            <div className="product-card">
+                <h1 className="text-3xl font-bold mb-6">{data.name}</h1>
+                <Image
+                    src={`${data.imageURL}1.avif`}
+                    alt={`Image of ${data.name}`}
+                    width={500}
+                    height={500}
+                    className="rounded"
+                />
+                <p>Price: ${data.price}</p>
+                <p>Stock: {data.stock}</p>
+                <p>Category: {data.category}</p>
+            </div>
+        )
+
+    }
 
     // Render content based on detail level
     const renderContent = (): JSX.Element | null => {
@@ -70,6 +94,8 @@ const ProductCardGenerator: React.FC<ProductCardGeneratorProps> = ({ data, detai
                 return generateLowDetailed();
             case "Medium":
                 return generateMediumDetailed();
+            case "High":
+                return generateHighDetailed();
             default:
                 return null;
         }
