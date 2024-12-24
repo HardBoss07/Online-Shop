@@ -30,10 +30,6 @@ export default function ProductPage() {
         fetchProductById();
     }, [product]);
 
-    if (!productData && !error) {
-        return <p>Loading...</p>;
-    }
-
     return (
         <>
             <head>
