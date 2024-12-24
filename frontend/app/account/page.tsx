@@ -1,15 +1,14 @@
 "use client";
 
-import Head from "next/head";
 import NavBar from "@/app/navbar";
 
 export default function SearchPage() {
     return (
         <>
-            <Head>
+            <head>
                 <title>NovaTech | Account</title>
                 <meta name="description" content="Your Account" />
-            </Head>
+            </head>
             <main>
                 <header>
                     <NavBar activeIcon={5} />

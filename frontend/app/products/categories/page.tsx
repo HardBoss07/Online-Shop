@@ -1,13 +1,10 @@
 "use client";
 
-import Head from "next/head";
 import React from "react";
 import NavBar from "@/app/navbar";
 import ProductCardGenerator from "@/app/ProductCardGenerator";
-
 import {useEffect, useState} from "react";
 import axios from "axios";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductsPage() {
@@ -72,10 +69,10 @@ export default function ProductsPage() {
 
     return (
         <>
-            <Head>
+            <head>
                 <title>NovaTech | Categories</title>
                 <meta name="description" content="All products sorted by their category" />
-            </Head>
+            </head>
             <main>
                 <header>
                     <NavBar activeIcon={2}/>

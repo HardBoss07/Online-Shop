@@ -1,16 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import Head from "next/head";
 import NavBar from "@/app/navbar";
 
 export default function Page() {
     return (
         <>
-            <Head>
+            <head>
                 <title>NovaTech</title>
                 <meta name="description" content="Welcome to NovaTech!"/>
-            </Head>
+            </head>
             <main>
                 <header>
                     <NavBar activeIcon={1} />

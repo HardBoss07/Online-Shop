@@ -1,15 +1,14 @@
 "use client";
 
-import Head from "next/head";
 import NavBar from "@/app/navbar";
 
 export default function SearchPage() {
     return (
         <>
-            <Head>
+            <head>
                 <title>NovaTech | Cart</title>
                 <meta name="description" content="Your Shopping Cart" />
-            </Head>
+            </head>
             <main>
                 <header>
                     <NavBar activeIcon={4} />

@@ -1,15 +1,14 @@
 "use client";
 
-import Head from "next/head";
 import NavBar from "@/app/navbar";
 
 export default function TEMPLATE_PAGE() {
     return (
         <>
-            <Head>
+            <head>
                 <title>NovaTech | TEMPLATE</title>
                 <meta name="description" content="TEMPLATE DESCRIPTION" />
-            </Head>
+            </head>
             <main>
                 <header>
                     <NavBar activeIcon={0} />

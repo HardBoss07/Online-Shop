@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import React from "react";
-
-import Head from "next/head";
 import Link from "next/link";
 import NavBar from "@/app/navbar";
 import ProductCardGenerator from "@/app/ProductCardGenerator";
@@ -30,10 +28,10 @@ export default function ProductsPage() {
 
     return (
         <>
-            <Head>
+            <head>
                 <title>NovaTech | Products</title>
                 <meta name="description" content="Explore our wide range of products!" />
-            </Head>
+            </head>
             <main>
                 <header>
                     <NavBar activeIcon={2} />

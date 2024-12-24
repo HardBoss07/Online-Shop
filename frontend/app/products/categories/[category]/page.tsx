@@ -2,8 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Head from "next/head";
-import Image from "next/image";
 import NavBar from "@/app/navbar";
 import ProductCardGenerator from "@/app/ProductCardGenerator";
 import Link from "next/link";
@@ -35,10 +33,10 @@ export default function CategoryPage() {
 
     return (
         <>
-            <Head>
+            <head>
                 <title>NovaTech | {category}</title>
                 <meta name="description" content={`All products in the ${category} category`} />
-            </Head>
+            </head>
             <main>
                 <header>
                     <NavBar activeIcon={2} />
