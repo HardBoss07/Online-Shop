@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 import axios from "axios";
 import React from "react";
 import Link from "next/link";
@@ -27,29 +27,23 @@ export default function ProductsPage() {
     }, []);
 
     return (
-        <>
-            <head>
-                <title>NovaTech | Products</title>
-                <meta name="description" content="Explore our wide range of products!" />
-            </head>
-            <main>
-                <header>
-                    <NavBar activeIcon={2} />
-                </header>
-                <section className="page-content">
-                    <h1 className="text-3xl font-bold mb-6">All our Products:</h1>
-                    <Link href="/products/categories">Shop by category</Link>
-                    {error ? (
-                        <p className="text-red-500">{error}</p>
-                    ) : (
-                        <div className="product-list">
-                            {products.map((product: any) => (
-                                <ProductCardGenerator key={product.id} data={product} detail="Medium"/>
-                            ))}
-                        </div>
-                    )}
-                </section>
-            </main>
-        </>
+        <main>
+            <header>
+                <NavBar activeIcon={2}/>
+            </header>
+            <section className="page-content">
+                <h1 className="text-3xl font-bold mb-6">All our Products:</h1>
+                <Link href="/products/categories">Shop by category</Link>
+                {error ? (
+                    <p className="text-red-500">{error}</p>
+                ) : (
+                    <div className="product-list">
+                        {products.map((product: any) => (
+                            <ProductCardGenerator key={product.id} data={product} detail="Medium"/>
+                        ))}
+                    </div>
+                )}
+            </section>
+        </main>
     );
 }

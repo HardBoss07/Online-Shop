@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import NavBar from "@/app/navbar";
 import ProductCardGenerator from "@/app/ProductCardGenerator";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import {useParams} from "next/navigation";
 
 export default function CategoryPage() {
-    const { category } = useParams(); // Extract dynamic `category` from the URL
+    const {category} = useParams(); // Extract dynamic `category` from the URL
     const [products, setProducts] = useState([]);
     const [error, setError] = useState<string | null>(null);
 
@@ -32,29 +32,24 @@ export default function CategoryPage() {
     }, [category]);
 
     return (
-        <>
-            <head>
-                <title>NovaTech | {category}</title>
-                <meta name="description" content={`All products in the ${category} category`} />
-            </head>
-            <main>
-                <header>
-                    <NavBar activeIcon={2} />
-                </header>
-                <section className="page-content">
-                    <h1 className="text-3xl font-bold mb-6">All products for {category}:</h1>
-                    <Link href="/products/categories">Shop by category</Link>
-                    {error ? (
-                        <p className="text-red-500">{error}</p>
-                    ) : (
-                        <div className="product-list">
-                            {products.map((product: any) => (
-                                <ProductCardGenerator key={product.id} data={product} detail="Medium" />
-                            ))}
-                        </div>
-                    )}
-                </section>
-            </main>
-        </>
+
+        <main>
+            <header>
+                <NavBar activeIcon={2}/>
+            </header>
+            <section className="page-content">
+                <h1 className="text-3xl font-bold mb-6">All products for {category}:</h1>
+                <Link href="/products/categories">Shop by category</Link>
+                {error ? (
+                    <p className="text-red-500">{error}</p>
+                ) : (
+                    <div className="product-list">
+                        {products.map((product: any) => (
+                            <ProductCardGenerator key={product.id} data={product} detail="Medium"/>
+                        ))}
+                    </div>
+                )}
+            </section>
+        </main>
     );
 }

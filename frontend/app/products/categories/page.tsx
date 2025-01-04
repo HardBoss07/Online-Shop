@@ -68,20 +68,16 @@ export default function ProductsPage() {
 
 
     return (
-        <>
-            <head>
-                <title>NovaTech | Categories</title>
-                <meta name="description" content="All products sorted by their category" />
-            </head>
-            <main>
-                <header>
-                    <NavBar activeIcon={2}/>
-                </header>
-                <section className="page-content">
-                    <h1 className="text-3xl font-bold mb-6">Our Categories:</h1>
-                    {categories.map((category: any) => createCategoryDiv(category))}
-                </section>
-            </main>
-        </>
+
+        <main>
+            <header>
+                <NavBar activeIcon={2}/>
+            </header>
+            <section className="page-content">
+                <h1 className="text-3xl font-bold mb-6">Our Categories:</h1>
+                {categories.map((category: any) => createCategoryDiv(category))}
+            </section>
+        </main>
+
     );
 }
