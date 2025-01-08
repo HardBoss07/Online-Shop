@@ -1,5 +1,4 @@
-Entity Relationship Diagram for online_shop
-
+Entity Relationship Model for online_shop
 
 1. PRODUCT:
     .id: INT, NOT NULL, AUTO_INCREMENT (PK for 1.)
