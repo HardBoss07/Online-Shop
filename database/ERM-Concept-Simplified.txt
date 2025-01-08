@@ -1,0 +1,43 @@
+Entity Relationship Model for online_shop_simple
+
+1. PRODUCT
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 1.)
+    .name: VARCHAR(255), NOT NULL
+    .category: enum('Electronics','Smartphone','Audio','Laptop','Peripherals') NOT NULL
+    .price: DECIMAL(10,2)
+    .stock: INT, NOT NULL
+
+2. USER
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 2.)
+    .username: VARCHAR(255), NOT NULL, UNIQUE
+    .password: VARCHAR(255), NOT NULL
+    .firstname: VARCHAR(255), NOT NULL
+    .surname: VARCHAR(255), NOT NULL
+
+3. ORDER
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 3.)
+    .user_id: INT, NOT NULL (FK to 2.)
+    .date: DATETIME, NOT NULL
+    .discount: DECIMAL(10,2), NOT NULL
+    .total: DECIMAL(10,2), NOT NULL
+    .payment_id (fk to PAYMENT)
+
+4. ADDRESS
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 4.)
+    .user_id: INT, NOT NULL (FK to 2.)
+    .country: VARCHAR(255), NOT NULL
+    .street: VARCHAR(255), NOT NULL
+    .city: VARCHAR(255), NOT NULL
+    .postal_code: VARCHAR(20), NOT NULL
+
+5. PAYMENT
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 5.)
+    .order_id: INT, NOT NULL (FK to 3.)
+    .payment_method: enum('MasterCard','PayPal','Visa','Bitcoin') NOT NULL
+    .amount_due: DECIMAL(10,2), NOT NULL
+    .date: DATETIME, NOT NULL
+
+Relations:
+ORDER.user_id       -> USER.id      | m ----- 1
+ADDRESS.user_id     -> USER.id      | m ----- 1
+PAYMENT.order_id    -> ORDER.id     | 1 ----- 1
