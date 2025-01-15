@@ -37,6 +37,12 @@ Entity Relationship Model for online_shop_simple
     .amount_due: DECIMAL(10,2), NOT NULL
     .date: DATETIME, NOT NULL
 
+6. CATEGORY
+    .label: VARCHAR(255), NOT NULL, UNIQUE
+
+7. PAYMENT_METHOD
+    .label: VARCHAR(255), NOT NULL, UNIQUE
+
 Relations:
 ORDER.user_id       -> USER.id      | m ----- 1
 ADDRESS.user_id     -> USER.id      | m ----- 1
