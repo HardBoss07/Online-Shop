@@ -3,7 +3,7 @@ Entity Relationship Model for online_shop_simple
 1. PRODUCT
     .id: INT, NOT NULL, AUTO_INCREMENT (PK for 1.)
     .name: VARCHAR(255), NOT NULL
-    .category: enum('Electronics','Smartphone','Audio','Laptop','Peripherals') NOT NULL
+    .category: INT, NOT NULL (FK to 6.)
     .price: DECIMAL(10,2)
     .stock: INT, NOT NULL
 
@@ -33,17 +33,21 @@ Entity Relationship Model for online_shop_simple
 5. PAYMENT
     .id: INT, NOT NULL, AUTO_INCREMENT (PK for 5.)
     .order_id: INT, NOT NULL (FK to 3.)
-    .payment_method: enum('MasterCard','PayPal','Visa','Bitcoin') NOT NULL
+    .payment_method_id: INT, NOT NULL (FK to 7.)
     .amount_due: DECIMAL(10,2), NOT NULL
     .date: DATETIME, NOT NULL
 
 6. CATEGORY
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 6.)
     .label: VARCHAR(255), NOT NULL, UNIQUE
 
 7. PAYMENT_METHOD
+    .id: INT, NOT NULL, AUTO_INCREMENT (PK for 7.)
     .label: VARCHAR(255), NOT NULL, UNIQUE
 
 Relations:
-ORDER.user_id       -> USER.id      | m ----- 1
-ADDRESS.user_id     -> USER.id      | m ----- 1
-PAYMENT.order_id    -> ORDER.id     | 1 ----- 1
+ORDER.user_id              -> USER.id            | m ----- 1
+ADDRESS.user_id            -> USER.id            | m ----- 1
+PAYMENT.order_id           -> ORDER.id           | 1 ----- 1
+PRODUCT.category           -> CATEGORY.id        | 1 ----- m
+PAYMENT.payment_method_id  -> PAYMENT_METHOD.id  | 1 ----- m
