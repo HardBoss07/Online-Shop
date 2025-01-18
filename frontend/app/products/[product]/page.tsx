@@ -11,13 +11,15 @@ export default function ProductPage() {
     const [productData, setProductData] = useState<any>(null);
     const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        if (!product) return;
+    console.log("useParams: ", useParams());
+    console.log(`Fetching product data from: ${process.env.NEXT_PUBLIC_API_URL}/api/products/${product}`);
 
+  /*  useEffect(() => {
+        if (!product) return;
         const fetchProductById = async () => {
             try {
                 const response = await axios.get(
-                    `${process.env.NEXT_PUBLIC_API_URL}/api/products/${product}`
+                    `http://localhost:8080/api/products/${product}`
                 );
                 setProductData(response.data);
                 setError(null);
@@ -28,7 +30,8 @@ export default function ProductPage() {
         };
 
         fetchProductById();
-    }, [product]);
+    }, [product]);*/
+    setProductData(fetch(`http://localhost:8080/api/products/category/${product}`, {}));
 
     return (
         <main>

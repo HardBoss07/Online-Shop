@@ -21,14 +21,9 @@ public class ShopController {
     }
 
     @GetMapping("/products/{id}")
-    public ResponseEntity<?> getProductById(@PathVariable long id) {
+    public Product getProductById(@PathVariable long id) {
         System.out.println("accessed /products/" + id);
-        Product product = productHandler.getProductById(id);
-        if (product == null) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Product not found with id: " + id);
-        }
-        return ResponseEntity.ok(product);
+        return productHandler.getProductById(id);
     }
 
     @GetMapping("/products/categories")

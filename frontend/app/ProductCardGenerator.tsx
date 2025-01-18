@@ -48,7 +48,7 @@ const ProductCardGenerator: React.FC<ProductCardGeneratorProps> = ({ data, detai
         const imageUrl = `${data.imageURL}1.avif`;
 
         return (
-            <Link key={data.id} className="product-card" href={`/products/${data.id}`}>
+            <Link key={data.id} className="product-card" href={`/products/${data.id}`} prefetch={false}>
                 <h2 className="product-title">{data.name}</h2>
                 <div className="image-container">
                     <Image
