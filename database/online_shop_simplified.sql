@@ -1,3 +1,9 @@
+CREATE DATABASE IF NOT EXISTS `online_shop_simplified` CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `online_shop_simplified``;
+
+-- Table structure for table `product`
+DROP TABLE IF EXISTS `product`;
+
 DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address` (
   `id` bigint NOT NULL AUTO_INCREMENT,
